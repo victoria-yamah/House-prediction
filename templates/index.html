@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>House Price Prediction</title>
+</head>
+<body>
+
+<h2>House Price Prediction</h2>
+
+<form action="/predict" method="post">
+    <input name="OverallQual" placeholder="Overall Quality" required><br>
+    <input name="GrLivArea" placeholder="Living Area (sqft)" required><br>
+    <input name="TotalBsmtSF" placeholder="Basement Area" required><br>
+    <input name="GarageCars" placeholder="Garage Cars" required><br>
+    <input name="FullBath" placeholder="Full Bathrooms" required><br>
+    <input name="YearBuilt" placeholder="Year Built" required><br>
+
+    <button type="submit">Predict Price</button>
+</form>
+
+{% if prediction %}
+<h3>Predicted House Price: {{ prediction }}</h3>
+{% endif %}
+
+</body>
+</html>
